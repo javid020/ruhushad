@@ -1,0 +1,186 @@
+
+// HEADER PART
+#header {
+    padding-top: 1rem;
+    .navbar {
+        background-color: white !important;
+        box-shadow: none;
+            .header-logo {
+                padding-left: 5rem;
+            }
+            .navbar-nav {
+                padding-right: 5rem;
+            }
+            .nav-item {
+                .active {
+                    font-family: "Abrade - Book";
+                    text-transform: uppercase;
+                    font-weight: 400; 
+                    color: #5bbf12 !important;
+                }
+                .waves-effect {
+                    font-family: "Suisse Intl";
+                    width: 118px;
+                    color: #8a959e;
+                    border: 2px solid #8a959e;
+                    border-radius: 20px;
+                    background-color: #fff;
+                    box-shadow: none;
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+                .nav-link {
+                    font-family: "Suisse Intl";
+                    color: black;
+                    font-size: 14px;
+                    font-weight: 300;
+                    margin-right: 1.5rem;
+                    line-height: 3rem;
+                            &:hover {
+                                color: #5bbf12;
+                                background-color: #fff;
+                                transition: 0.5s;
+                             }
+                }
+            }
+    }
+
+    #header-text {
+        text-align: center;
+            h3 {
+                color: #343434;
+                font-family: "Suisse Intl";
+                font-size: 60px;
+                font-weight: 400;
+                letter-spacing: 3px;
+            }
+            p {
+                color: #989898;
+                font-family: "Suisse Intl";
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .waves-effect {
+                background-color: #343434;
+                border-radius: 15px;
+                font-family: "Suisse Intl";
+                font-weight: 400;
+                letter-spacing: 0.7px;
+                text-transform: uppercase;
+                font-size: 14px;
+                width: 12rem;
+                height: 3rem;
+                
+            }
+    }
+}
+
+// FEATURES PART
+#features-section {
+    padding-top: 4rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
+    .feature-detail {
+        i { 
+            padding-top: 1.5rem; 
+            color: #d1d2d3;
+        }
+        .feature-txt-box {
+            float: right;
+            h4 {
+                font-family: "Suisse Intl";
+                font-size: 19px;
+                font-weight: 400;
+                color: #323a45;
+            }
+            p {
+                color: #6c6c6c;
+                font-family: "Suisse Intl";
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+// MOLLA PART
+#molla-section {
+    #molla-text {
+        text-align: center;
+        h3 {
+            color: #359c15;
+            font-family: "Suisse Intl";
+            font-size: 30px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            line-height: 0px;
+        }
+        h2 {
+            color: #323a45;
+            font-family: "Suisse Intl";
+            font-size: 40px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+    }
+    .molla-inputs {
+        .input-field {
+            border: 1px solid #8a959e;;
+            border-radius: 25px;
+            margin-top: 1.5rem;
+        }
+        input[type="text"]:not(.browser-default) {
+            padding-top: 0.4rem;
+            border-bottom: none;
+            height: 1.5rem;
+        }
+        .waves-effect {
+            width: 10rem;
+            border-radius: 15px;
+            background-color: #323a45;
+            color: #ffffff;
+            font-family: "Suisse Intl";
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+        }
+    }
+    .molla-profile-box {
+        .single-molla {
+            .wrap {
+                width: 100%;
+            }
+            .image {
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa_mvwLkF2pT5sxIWyChllv-ttLmR7S9sqFCuy3kZSNW4bjqoygQ");
+                position: relative;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            .image:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.301);
+            }
+            .text {
+                color: #FFF;
+                position: relative;
+                padding-top: 6rem;
+                padding-left: 2rem;
+
+                .molla-name {
+                    font-weight: 600;
+                }
+                .molla-job {
+                    
+                }
+            }
+        }
+    }
+}
