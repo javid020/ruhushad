@@ -8,6 +8,7 @@ var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var babel = require('gulp-babel');
+var zip = require('gulp-zip');
 
 
 //Files Path
@@ -80,6 +81,12 @@ gulp.task('images', function(){
 //Default
 gulp.task('default', ['images','styles','scripts'], function(){
     console.log('starting default task');
+});
+
+gulp.task('export', function (){
+         gulp.src('*')
+        .pipe(zip('RuhuShad.zip'))
+        .pipe(gulp.dest('..'))
 });
 
 //Watch

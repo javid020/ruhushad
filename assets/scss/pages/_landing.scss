@@ -20,20 +20,20 @@
                 }
                 .waves-effect {
                     font-family: "Suisse Intl";
-                    width: 118px;
+                    width: 7.86rem;
                     color: #8a959e;
                     border: 2px solid #8a959e;
                     border-radius: 20px;
                     background-color: #fff;
                     box-shadow: none;
-                    font-size: 14px;
+                    font-size: 0.93rem;
                     font-weight: 400;
                     text-transform: uppercase;
                 }
                 .nav-link {
                     font-family: "Suisse Intl";
                     color: black;
-                    font-size: 14px;
+                    font-size: 0.93rem;
                     font-weight: 300;
                     margin-right: 1.5rem;
                     line-height: 3rem;
@@ -51,24 +51,24 @@
             h3 {
                 color: #343434;
                 font-family: "Suisse Intl";
-                font-size: 60px;
+                font-size: 4rem;
                 font-weight: 400;
-                letter-spacing: 3px;
+                letter-spacing: 0.2rem;
             }
             p {
                 color: #989898;
                 font-family: "Suisse Intl";
-                font-size: 14px;
+                font-size: 0.93rem;
                 font-weight: 400;
             }
             .waves-effect {
                 background-color: #343434;
-                border-radius: 15px;
+                border-radius: 1rem;
                 font-family: "Suisse Intl";
                 font-weight: 400;
-                letter-spacing: 0.7px;
+                letter-spacing: 0.046rem;
                 text-transform: uppercase;
-                font-size: 14px;
+                font-size: 0.93rem;
                 width: 12rem;
                 height: 3rem;
                 
@@ -90,16 +90,16 @@
             float: right;
             h4 {
                 font-family: "Suisse Intl";
-                font-size: 19px;
+                font-size: 1.26rem;
                 font-weight: 400;
                 color: #323a45;
             }
             p {
                 color: #6c6c6c;
                 font-family: "Suisse Intl";
-                font-size: 14px;
+                font-size: 0.93rem;
                 font-weight: 400;
-                line-height: 30px;
+                line-height: 2rem;
             }
         }
     }
@@ -112,23 +112,23 @@
         h3 {
             color: #359c15;
             font-family: "Suisse Intl";
-            font-size: 30px;
+            font-size: 2rem;
             font-weight: 400;
-            letter-spacing: 1.5px;
+            letter-spacing: 0.1rem;
             line-height: 0px;
         }
         h2 {
             color: #323a45;
             font-family: "Suisse Intl";
-            font-size: 40px;
+            font-size: 2.6rem;
             font-weight: 400;
-            letter-spacing: 2px;
+            letter-spacing: 0.13rem;
         }
     }
     .molla-inputs {
         .input-field {
             border: 1px solid #8a959e;;
-            border-radius: 25px;
+            border-radius: 1.6rem;
             margin-top: 1.5rem;
         }
         input[type="text"]:not(.browser-default) {
@@ -142,45 +142,83 @@
             background-color: #323a45;
             color: #ffffff;
             font-family: "Suisse Intl";
-            font-size: 13px;
+            font-size: 0.86rem;
             font-weight: 400;
             text-transform: uppercase;
-            letter-spacing: 0.9px;
+            letter-spacing: 0.060rem;
         }
     }
     .molla-profile-box {
-        .single-molla {
-            .wrap {
-                width: 100%;
-            }
-            .image {
-                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa_mvwLkF2pT5sxIWyChllv-ttLmR7S9sqFCuy3kZSNW4bjqoygQ");
-                position: relative;
-                background-repeat: no-repeat;
-                background-size: 100% 100%;
-            }
-            .image:before{
-                content: '';
+        padding-left: 7rem;
+        padding-right: 7rem;
+        .overlay {
+            position: relative;
+            padding: 39% 0;
+            margin: 0 auto;
+            img {
                 position: absolute;
                 top: 0;
-                right: 0;
                 left: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.301);
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                filter: brightness(55%);
+                border-radius: 8px;
             }
-            .text {
-                color: #FFF;
-                position: relative;
-                padding-top: 6rem;
-                padding-left: 2rem;
-
-                .molla-name {
-                    font-weight: 600;
-                }
-                .molla-job {
-                    
+            figcaption {
+                position: absolute;
+                bottom: 2rem;
+                left: 1.9rem;
+                color: #fff;
+                float: left;
+                font-family: "Suisse Intl";
+                font-size: 1.1rem;
+                font-weight: 700;
+                span {
+                    padding-top: 3%;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    float: left;
                 }
             }
         }
     }
+    .mollas-button {
+        .waves-effect {
+            padding: 0rem 5rem;
+            border-radius: 18px;
+            background-color: #dfdcdc;
+            color: #323a45;
+            font-family: "Suisse Intl";
+            font-size: 0.933rem;
+            font-weight: 400;
+            line-height: 0.577rem;
+            text-transform: uppercase;
+            letter-spacing: 0.047rem;
+        }
+    }
+}
+
+.parallax-container {
+    margin-top: 7rem;
+    text-align: center;
+    padding-top: 10%;
+    font-family: "Suisse Intl";
+    font-weight: 700;
+    img {
+        filter: brightness(60%);
+    }
+    .testimonials-text {
+        .quotes {
+            color: #fff;
+        }
+        .clever-words {
+            h2 {
+                font-size: 3rem;
+            }
+            color: #fff;
+        }
+    }
+
+
 }
