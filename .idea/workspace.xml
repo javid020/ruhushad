@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="834ce697-dc63-4dc6-8419-605874bd9e9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/dist/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/dist/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/scss/pages/_landing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/pages/_landing.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
@@ -72,14 +73,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1266" />
-          <entry key="scss" value="1877" />
+          <entry key="html" value="1953" />
+          <entry key="scss" value="2939" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1266" />
-          <entry key="SCSS" value="1877" />
+          <entry key="HTML" value="1953" />
+          <entry key="SCSS" value="2939" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -95,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="510" column="8" lean-forward="true" selection-start-line="510" selection-start-column="8" selection-end-line="510" selection-end-column="8" />
+            <state relative-caret-position="254">
+              <caret line="546" column="48" selection-start-line="546" selection-start-column="48" selection-end-line="546" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -104,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/scss/pages/_landing.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="338" column="26" selection-start-line="338" selection-start-column="26" selection-end-line="338" selection-end-column="26" />
+            <state relative-caret-position="228">
+              <caret line="416" selection-start-line="416" selection-end-line="416" />
             </state>
           </provider>
         </entry>
@@ -120,6 +121,8 @@
       <find>paralla</find>
       <find>parala</find>
       <find>head</find>
+      <find>font</find>
+      <find>header-logo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -265,12 +268,12 @@
       <workItem from="1536668374406" duration="1518000" />
       <workItem from="1536669925312" duration="4157000" />
       <workItem from="1536675359017" duration="3176000" />
-      <workItem from="1536739717844" duration="12352000" />
+      <workItem from="1536739717844" duration="18675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30161000" />
+    <option name="totallyTimeSpent" value="36484000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -298,7 +301,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286219" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3286219" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32685512" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -338,15 +341,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/scss/pages/_landing.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="338" column="26" selection-start-line="338" selection-start-column="26" selection-end-line="338" selection-end-column="26" />
+        <state relative-caret-position="228">
+          <caret line="416" selection-start-line="416" selection-end-line="416" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="510" column="8" lean-forward="true" selection-start-line="510" selection-start-column="8" selection-end-line="510" selection-end-column="8" />
+        <state relative-caret-position="254">
+          <caret line="546" column="48" selection-start-line="546" selection-start-column="48" selection-end-line="546" selection-end-column="48" />
         </state>
       </provider>
     </entry>

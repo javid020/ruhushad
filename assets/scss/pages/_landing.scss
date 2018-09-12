@@ -325,9 +325,10 @@
                 text-align: center;
                 margin-top: 2rem;
                 a {
-                    border-radius: 100%;
+                    border-radius: 50%;
                     margin: 0 3px;
                     background-color: #00b489;
+                    color: #fff;
                 }
                }
             }
@@ -343,7 +344,7 @@
         font-family: "Suisse Intl";
         font-weight: 700;
         img {
-            filter: brightness(40%);
+            filter: brightness(30%);
         }
         .question-text {
                 color: #fff;
@@ -363,5 +364,79 @@
             }
         }
     }
+
+    //    FOOTER PART
+    #footer {
+        font-family: "Suisse Intl";
+        padding: 5rem 7rem;
+        .footer-top {
+            h4 {
+                color: #212b34 ;
+                font-size: 1.10rem;
+                margin-top: 0;
+                font-weight: 500;
+            }
+        }
+        .footer-body {
+            padding-top: 2.2rem;
+            p {
+                color: #929ea5;
+                font-size: 0.87rem;
+            }
+            .footer-phone {
+                padding-top: 0.3rem;
+                color: #7f8c95;
+                font-weight: 700;
+            }
+            ul {
+                margin-top: -3%;
+                li {
+                    &:before {
+                        content: "•";
+                        color: #94a2ab;
+                        margin-right: 0.4rem;
+                    }
+                    line-height: 1.8rem;
+                    a {
+                        color: #929ea5;
+                        font-size: 0.87rem;
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            #job-box {
+                h5 {
+                    font-size: 0.9rem;
+                    color: #343434;
+                    margin-top: 0.29rem;
+                }
+                p {
+                    color: #929ea5;
+                    &:before {
+                        content: "\1011";
+                        color: #808080;
+                        margin-right: 0.1rem;
+                    }
+                }
+                img {
+                    width: 3.2rem;
+                    height: 3.2rem;
+                    float: left;
+                    object-fit: cover;
+                }
+            }
+
+        }
+        .footer-social {
+            padding-top: 0.7rem;
+            a {
+                color: #94a2ab;
+                padding-right: 1rem;
+            }
+        }
+    }
+
 
 
