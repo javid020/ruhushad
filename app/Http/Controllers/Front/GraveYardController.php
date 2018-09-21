@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controller\Front;
 
 use App\Models\GraveYard;
 use Illuminate\Http\Request;

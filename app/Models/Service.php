@@ -6,11 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+
+
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
     |--------------------------------------------------------------------------
     */
+
+    protected $table = 'services';
 
 
     /*
