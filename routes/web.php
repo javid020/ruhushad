@@ -4,21 +4,23 @@ Route::pattern('id', '\d+');
 Route::pattern('slug', '[A-Za-z]+');
 Route::pattern('cart', '[1-9][0-9]{5}');
 
+
+Route::prefix('test')->group(function () {
+    Route::get('categories', 'FakerData@categories');
+    Route::get('articles', 'FakerData@articles');
+    Route::get('beliefs', 'FakerData@beliefs');
+    Route::get('yards', 'FakerData@yards');
+    Route::get('mollas', 'FakerData@mollas');
+    Route::get('services', 'FakerData@services');
+    Route::get('servimages', 'FakerData@servimages');
+});
+
+
 Route::group([
     'namespace' => 'Front'
 ], function () {
     Route::get('/', function () {
         return 'suka blyat';
-    });
-
-    Route::prefix('test')->group(function () {
-        Route::get('categories', 'FakerData@categories');
-        Route::get('articles', 'FakerData@articles');
-        Route::get('beliefs', 'FakerData@beliefs');
-        Route::get('yards', 'FakerData@yards');
-        Route::get('mollas', 'FakerData@mollas');
-        Route::get('services', 'FakerData@services');
-        Route::get('servimages', 'FakerData@servimages');
     });
 
     Route::get('mollas/{id?}', 'MollaController@index');

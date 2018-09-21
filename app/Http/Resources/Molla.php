@@ -14,6 +14,19 @@ class Molla extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $date = date('d-m-Y', strtotime($this->birth_day));
+
+        return [
+            'id' => $this->id,
+            'name' => $this->fullname,
+            'email' => $this->email,
+            'phone1' => $this->phone,
+            'phone2' => $this->phone1,
+            'about' => $this->about,
+            'gender' => $this->gender,
+            'birth_date' => $date,
+            'belief' => $this->belief->name,
+            'experience' => $this->experience . ' years',
+        ];
     }
 }

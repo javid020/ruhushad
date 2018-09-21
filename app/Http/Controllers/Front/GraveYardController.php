@@ -2,8 +2,8 @@
 
 namespace App\Http\Controller\Front;
 
+use App\Http\Controllers\Controller;
 use App\Models\GraveYard;
-use Illuminate\Http\Request;
 
 class GraveYardController extends Controller
 {

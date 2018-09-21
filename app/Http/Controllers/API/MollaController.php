@@ -5,6 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Molla;
 use App\Http\Requests;
+use App\Http\Resources\Molla as MollaResource;
+use App\Http\Resources\MollaCollection;
+
 
 class MollaController extends Controller
 {
@@ -14,11 +17,12 @@ class MollaController extends Controller
             // if id is given, find molla by id, else get all list
             $molla = $id ? Molla::findOrFail($id) : Molla::all();
 
-            return response()->json($molla);
+            return $id ? new MollaResource($molla) : new MollaCollection($molla);
+
         } catch (\Exception $e) {
             return response()->json([
                 'error' => $e->getMessage()
-            ], $e->getCode() ?: 500);
+            ], $e->getCode() ?: 404);
         }
 
 
