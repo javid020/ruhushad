@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'mollas',
     ],
 
     /*
@@ -38,9 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'mollas',
         ],
-
+        'mollas' => [
+            'driver' => 'session',
+            'provider' => 'mollas',
+        ],
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -70,6 +73,11 @@ return [
             'model' => App\User::class,
         ],
 
+        'mollas' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Molla::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -94,6 +102,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'mollas' => [
+            'provider' => 'mollas',
             'table' => 'password_resets',
             'expire' => 60,
         ],
