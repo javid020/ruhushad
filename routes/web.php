@@ -20,8 +20,8 @@ Route::group([
     'namespace' => 'Front'
 ], function () {
     Route::get('/', function () {
-        return 'suka blyat';
-    });
+        return view('pages.index');
+    })->name('mainpage');
 
     Route::get('mollas/{id?}', 'MollaController@index');
     Route::get('articles/{id?}', 'ArticleController@index');

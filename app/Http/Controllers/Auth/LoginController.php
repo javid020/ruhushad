@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Molla as MollaModel;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -45,6 +47,30 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
+
+    public function login(Request $request)
+    {
+        // Check validation
+        $this->validate($request, [
+            'phone' => 'required|min:6|regex:/[0-9+]{13}/',
+            'password' => 'required|min:6'
+        ]);
+
+        // Get user record
+        $user = MollaModel::where('phone', $request->get('phone'))->first();
+
+        // Check Condition Mobile No. Found or Not
+        if($request->get('phone') != $user->phone) {
+
+            return redirect()->back()->with('errors');
+        }
+
+        // Set Auth Details
+        \Auth::login($user);
+
+        // Redirect home page
+        return redirect()->route('mainpage');
+    }
 
 //    protected function credentials(Request $request)
 //    {
