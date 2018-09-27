@@ -56,20 +56,25 @@ class LoginController extends Controller
             'password' => 'required|min:6'
         ]);
 
+        $phone = $request->get('phone');
+        $password = $request->get('password');
+
         // Get user record
-        $user = MollaModel::where('phone', $request->get('phone'))->first();
-
+        $user = MollaModel::where(['phone'=> $phone,'password'=> $password])->first();
+        
         // Check Condition Mobile No. Found or Not
-        if($request->get('phone') != $user->phone) {
 
-            return redirect()->back()->with('errors');
+//        !auth()->attempt(['phone'=>$request->get('phone'),'password'=>$request->get('password')])
+        if(auth()->attempt(['phone'=> $phone,'password'=> $password])) {
+
+
+            // Redirect home page
+            return redirect()->route('mainpage');
+
+        } else {
+            return redirect()->back()->with('message', 'Bele dannilar yoxdu.');
         }
 
-        // Set Auth Details
-        \Auth::login($user);
-
-        // Redirect home page
-        return redirect()->route('mainpage');
     }
 
 //    protected function credentials(Request $request)

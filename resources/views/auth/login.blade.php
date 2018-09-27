@@ -11,6 +11,13 @@
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
+                        @if(session('message'))
+                            <div class='alert alert-danger'>
+                                {{ session('message') }}
+                            </div>
+                        @endif
+
+
                         <div class="form-group row">
                             <label for="phone" class="col-sm-4 col-form-label text-md-right">{{ __('Phone') }}</label>
 
