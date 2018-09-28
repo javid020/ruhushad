@@ -87,7 +87,7 @@ return [
     */
 
     // Fully qualified namespace of the User model
-    'user_model_fqn' => \Backpack\Base\app\Models\BackpackUser::class,
+    'user_model_fqn' => \App\Models\Admin::class,
 
     // The classes for the middleware to check if the visitor is an admin
     // Can be a single class or an array of clases
@@ -107,11 +107,11 @@ return [
 
     // The guard that protects the Backpack admin panel.
     // If null, the config.auth.defaults.guard value will be used.
-    'guard' => null,
+    'guard' => 'admin',
 
     // The password reset configuration for Backpack.
     // If null, the config.auth.defaults.passwords value will be used.
-    'passwords' => null,
+    'passwords' => 'admin',
 
     // What kind of avatar will you like to show to the user?
     // Default: gravatar (automatically use the gravatar for his email)

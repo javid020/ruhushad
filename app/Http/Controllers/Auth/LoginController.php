@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Molla as MollaModel;
 use Illuminate\Http\Request;
 
@@ -30,6 +31,11 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected function guard()
+    {
+        return Auth::guard('mollas');
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -38,6 +44,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
     }
 
 
@@ -60,18 +67,20 @@ class LoginController extends Controller
         $password = $request->get('password');
 
         // Get user record
-        $user = MollaModel::where(['phone'=> $phone,'password'=> $password])->first();
-        
+        $user = MollaModel::where(['phone'=> $phone,'password'=> Hash::make($password)])->first();
+
         // Check Condition Mobile No. Found or Not
 
 //        !auth()->attempt(['phone'=>$request->get('phone'),'password'=>$request->get('password')])
-        if(auth()->attempt(['phone'=> $phone,'password'=> $password])) {
-
+//        if(auth()->attempt(['phone'=> $phone,'password'=> $password])) {
+        if($user) {
 
             // Redirect home page
             return redirect()->route('mainpage');
 
         } else {
+
+//            die(bcrypt($password));
             return redirect()->back()->with('message', 'Bele dannilar yoxdu.');
         }
 
