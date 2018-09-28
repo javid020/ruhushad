@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
 class Molla extends Authenticatable
 {
+
+    use CrudTrait;
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES

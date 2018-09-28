@@ -31,10 +31,10 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
 
-    protected function guard()
-    {
-        return Auth::guard('mollas');
-    }
+//    protected function guard()
+//    {
+//        return Auth::guard('mollas');
+//    }
 
     /**
      * Create a new controller instance.
@@ -47,50 +47,16 @@ class LoginController extends Controller
 
     }
 
-
-    /**
-     * Get the needed authorization credentials from the request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
-
-    public function login(Request $request)
+   public function username()
     {
-        // Check validation
-        $this->validate($request, [
-            'phone' => 'required|min:6|regex:/[0-9+]{13}/',
-            'password' => 'required|min:6'
-        ]);
-
-        $phone = $request->get('phone');
-        $password = $request->get('password');
-
-        // Get user record
-        $user = MollaModel::where(['phone'=> $phone,'password'=> Hash::make($password)])->first();
-
-        // Check Condition Mobile No. Found or Not
-
-//        !auth()->attempt(['phone'=>$request->get('phone'),'password'=>$request->get('password')])
-//        if(auth()->attempt(['phone'=> $phone,'password'=> $password])) {
-        if($user) {
-
-            // Redirect home page
-            return redirect()->route('mainpage');
-
-        } else {
-
-//            die(bcrypt($password));
-            return redirect()->back()->with('message', 'Bele dannilar yoxdu.');
-        }
-
+        return 'phone';
     }
 
-//    protected function credentials(Request $request)
+//    protected function validateLogin(Request $request)
 //    {
-//        if(is_numeric($request->get('email'))){
-//            return ['phone'=>$request->get('email'),'password'=>$request->get('password')];
-//        }
-//        return $request->only($this->username(), 'password');
+//        $this->validate($request, [
+//            $this->username() => 'required|string',
+//            'password' => 'required|string',
+//        ]);
 //    }
 }
