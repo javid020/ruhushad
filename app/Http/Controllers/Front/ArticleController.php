@@ -9,8 +9,8 @@ class ArticleController extends Controller
 {
     public function index($id = null) {
         // if id is given, find molla by id, else get all list
-        $id ? $article = Article::find($id) : $article = Article::all();
+        $articles = $id ? Article::find($id) : Article::all();
 
-        return $article;
+        return $articles;
     }
 }

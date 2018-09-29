@@ -17,7 +17,6 @@ class CreateMollaServiceTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('molla_id');
             $table->unsignedInteger('service_id');
-            $table->timestamps();
         });
     }
 

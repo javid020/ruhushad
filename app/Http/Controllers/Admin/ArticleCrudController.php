@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\MollaRequest as StoreRequest;
-use App\Http\Requests\MollaRequest as UpdateRequest;
+use App\Http\Requests\ArticleRequest as StoreRequest;
+use App\Http\Requests\ArticleRequest as UpdateRequest;
 
 /**
- * Class MollaCrudController
+ * Class ArticleCrudController
  * @package App\Http\Controllers\Admin
  * @property-read CrudPanel $crud
  */
-class MollaCrudController extends CrudController
+class ArticleCrudController extends CrudController
 {
     public function setup()
     {
@@ -22,9 +22,9 @@ class MollaCrudController extends CrudController
         | CrudPanel Basic Information
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Molla');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/molla');
-        $this->crud->setEntityNameStrings('molla', 'mollas');
+        $this->crud->setModel('App\Models\Article');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/article');
+        $this->crud->setEntityNameStrings('article', 'articles');
 
         /*
         |--------------------------------------------------------------------------
@@ -33,28 +33,19 @@ class MollaCrudController extends CrudController
         */
 
         $this->crud->addColumns([
-            ['name' => 'id',
-            'label' => 'ID',
+            ['name' => 'title',
+            'label' => 'Title',
             'type' => 'text'],
-            ['name' => 'fullname',
-            'label' => 'FullName',
+            ['name' => 'body',
+            'label' => 'Body',
             'type' => 'text'],
-            ['name' => 'email',
-            'label' => 'Email',
-            'type' => 'text'],
-            ['name' => 'phone',
-            'label' => 'Phone',
-            'type' => 'text'],
-            ['name' => 'phone1',
-            'label' => 'Phone 2',
-            'type' => 'text'],
-            ['name' => 'verified',
-            'label' => 'Verified',
-            'type' => 'boolean',
-            'options' => [0 => 'Inctive', 1 => 'Active']],
+            ['name' => 'published_at',
+            'label' => 'Published Date',
+            'type' => 'date',
+            'format' => 'j F Y'],
         ]);
 
-        // add asterisk for fields that are required in MollaRequest
+        // add asterisk for fields that are required in ArticleRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }
