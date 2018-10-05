@@ -61,7 +61,12 @@ class Molla extends Authenticatable
     protected $table = 'mollas';
 
     protected $fillable = [
-        'fullname','email', 'phone' , 'password'
+        'full_name','email', 'phone' , 'password', 'extra_phone', 'avatar', 'about',
+        'gender', 'birth_date', 'belief_id', 'verified', 'experience'
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 
 

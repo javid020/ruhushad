@@ -31,10 +31,6 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/';
 
-//    protected function guard()
-//    {
-//        return Auth::guard('mollas');
-//    }
 
     /**
      * Create a new controller instance.
