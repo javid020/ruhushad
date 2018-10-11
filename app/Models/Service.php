@@ -44,6 +44,7 @@ class Service extends Model
     */
 
     protected $table = 'services';
+    protected $fillable = ['name', 'category_id', 'price', 'avatar', 'about'];
 
 
     /*

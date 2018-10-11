@@ -34,6 +34,8 @@ class Category extends Model
     |--------------------------------------------------------------------------
     */
 
+    protected $fillable = ['name', 'parent_id'];
+
 
     /*
     |--------------------------------------------------------------------------
@@ -53,7 +55,11 @@ class Category extends Model
 
     public function parent()
     {
-        return $this->hasOne(Category::class, 'parent_id'); // error verecek rel field
+        return $this->hasOne(Category::class, 'parent_id');
+    }
+
+    public function service() {
+        return $this->hasMany(Service::class);
     }
 
 

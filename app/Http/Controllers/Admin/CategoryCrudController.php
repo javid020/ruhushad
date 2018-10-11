@@ -5,15 +5,15 @@ namespace App\Http\Controllers\Admin;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
-use App\Http\Requests\ArticleRequest as StoreRequest;
-use App\Http\Requests\ArticleRequest as UpdateRequest;
+use App\Http\Requests\CategoryRequest as StoreRequest;
+use App\Http\Requests\CategoryRequest as UpdateRequest;
 
 /**
- * Class ArticleCrudController
+ * Class CategoryCrudController
  * @package App\Http\Controllers\Admin
  * @property-read CrudPanel $crud
  */
-class ArticleCrudController extends CrudController
+class CategoryCrudController extends CrudController
 {
     public function setup()
     {
@@ -22,9 +22,9 @@ class ArticleCrudController extends CrudController
         | CrudPanel Basic Information
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Models\Article');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/article');
-        $this->crud->setEntityNameStrings('article', 'articles');
+        $this->crud->setModel('App\Models\Category');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/category');
+        $this->crud->setEntityNameStrings('category', 'categories');
 
         /*
         |--------------------------------------------------------------------------
@@ -33,48 +33,40 @@ class ArticleCrudController extends CrudController
         */
 
         $this->crud->addColumns([
-            ['name' => 'title',
-            'label' => 'Title',
+            ['name' => 'name',
+            'label' => 'Name',
             'type' => 'text'],
-            ['name' => 'body',
-            'label' => 'Body',
-            'type' => 'text'],
-            ['name' => 'published_at',
-            'label' => 'Published Date',
-            'type' => 'date',
-            'format' => 'j F Y'],
+
+            ['name' => 'parent_id',
+            'label' => 'Parent Category',
+            'type' => 'number'],
+
+            ['label' => "Parent", // Table column heading
+                'type' => "select",
+                'name' => 'parent_id', // the column that contains the ID of that connected entity;
+                'entity' => 'parent', // the method that defines the relationship in your Model
+                'attribute' => "name", // foreign key attribute that is shown to user
+                'model' => "App\Models\Category", // foreign k]
+                ]
         ]);
 
         $this->crud->addFields([
 
-            ['name' => 'title',
-            'label' => "Title",
+            ['name' => 'name',
+            'label' => 'Name',
             'type' => 'text'],
 
-            ['name' => 'body',
-            'label' => "Body",
-            'type' => 'ckeditor'],
-
-            ['name' => 'published_at',
-            'label' => "Published Date",
-            'type' => 'datetime_picker',
-            'datetime_picker_options' => [
-                'format' => 'DD/MM/YYYY HH:mm',
-                'language' => 'en'
-            ]],
-
             ['label' => "Category",
-            'type' => 'select2_multiple',
-            'name' => 'categories', // the method that defines the relationship in your Model
-            'entity' => 'categories', // the method that defines the relationship in your Model
+            'type' => 'select2',
+            'name' => 'parent_id', // the db column for the foreign key
+            'entity' => 'parent', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
-            'model' => "App\Models\Category", // foreign key model
-            'pivot' => true, // on create&update, do you need to add/delete pivot table entries?
+            'model' => "App\Models\Category" // foreign key model
             ],
 
         ]);
 
-        // add asterisk for fields that are required in ArticleRequest
+        // add asterisk for fields that are required in CategoryRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
     }
@@ -82,10 +74,8 @@ class ArticleCrudController extends CrudController
     public function store(StoreRequest $request)
     {
         $this->validate($request, [
-            'title' => 'required|min:3',
-            'body' => 'required|min:20',
-            'published_at' => 'required',
-            'categories' => 'required'
+            'name' => 'required|min:3',
+            'parent_id' => 'required',
         ]);
 
         // your additional operations before save here
@@ -99,10 +89,8 @@ class ArticleCrudController extends CrudController
     {
 
         $this->validate($request, [
-            'title' => 'required|min:3',
-            'body' => 'required|min:20',
-            'published_at' => 'required',
-            'categories' => 'required'
+            'name' => 'required|min:3',
+            'parent_id' => 'required',
         ]);
 
         // your additional operations before save here

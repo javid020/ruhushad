@@ -101,7 +101,7 @@ class MollaCrudController extends CrudController
             ['label' => "Belief",
             'type' => 'select',
             'name' => 'belief_id', // the db column for the foreign key
-            'entity' => 'molla', // the method that defines the relationship in your Model
+            'entity' => 'belief', // the method that defines the relationship in your Model
             'attribute' => 'name', // foreign key attribute that is shown to user
             'model' => "App\Models\Belief"],
 
